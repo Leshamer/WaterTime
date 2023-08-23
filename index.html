@@ -1,162 +1,296 @@
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Waterfall&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@900&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Waterfall&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@900&display=swap");
 </style>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>WaterTime</title>
+  </head>
+  <body>
     <div class="wrapper">
-        <!-------------------header--------------------------------->
-        <header>
-            <div class="main_title"> WaterTime</div>
-            <div class="menu">
-                <button class="gear_button">
-                    <img src="jpg/free-icon-gear-1946903.png" alt="Настройки" id="gear">
-                </button>
-                <div class="setups">
-                    <div class="menu_weight">Вес <input type="number" id="weight"></div>
-                    <div class="menu_hight">Рост <input type="number" id="hight"></div>
-                </div>
+      <!-------------------header--------------------------------->
+      <header>
+        <div class="main_title">WaterTime</div>
+        <div class="menu">
+          <button class="gear_button">
+            <img
+              src="jpg/free-icon-gear-1946903.png"
+              alt="Настройки"
+              id="gear"
+            />
+          </button>
+          <div class="setups">
+            <div class="menu_weight">
+              Вес <input type="number" id="weight" />
             </div>
-        </header>
-        <!-----------------main------------------------------------->
-        <main>
-            <div class="about">
-                <div class="about_title">About project</div>
-                <div class="about_text">WaterTime - is a simple and handy site to help you monitor your water balance. Here you can easily track the amount of water you drink during the day. The site's interface is as simple and intuitive as possible. You can easily enter information about the water you drink and monitor your progress. Keep your water balance under control with WaterTime - your trusted health companion.</div>
-                
+            <div class="menu_hight">
+              Рост <input type="number" id="hight" />
             </div>
-            <div class="water">
-                <div class="bottle" id="bottle_id">
-                    <div class="motivation">
-                        <div class="motivelem elem1">Well done</div>
-                        <div class="motivelem elem2">Keep it up</div>
-                        <div class="motivelem elem3">Great!</div>
-                    </div>
-                    <div class="bottle_waves" ></div>
+          </div>
+        </div>
+      </header>
+      <!-----------------main------------------------------------->
+      <main>
+        <div class="about">
+          <div class="about_title">About project</div>
+          <div class="about_text">
+            WaterTime - is a simple and handy site to help you monitor your
+            water balance. Here you can easily track the amount of water you
+            drink during the day. The site's interface is as simple and
+            intuitive as possible. You can easily enter information about the
+            water you drink and monitor your progress. Keep your water balance
+            under control with WaterTime - your trusted health companion.
+          </div>
+        </div>
+        <div class="water">
+          <div class="bottle" id="bottle_id">
+            <div class="motivation">
+              <div class="motivelem elem1">Well done</div>
+              <div class="motivelem elem2">Keep it up</div>
+              <div class="motivelem elem3">Great!</div>
+            </div>
+            <div class="bottle_waves"></div>
+          </div>
+
+          <div class="plan">
+            <div class="date">
+              <div class="today">
+                <span>Today: </span>
+                <div id="currentDate"></div>
+              </div>
+            </div>
+            <div class="table">
+              <div class="cups">
+                <div class="cups_item" data-rate="1">
+                  <!--Картинка-->
+                  <div class="water_glass">
+                    <img
+                      src="jpg/glass-of-water.png"
+                      alt="Тут должен быть стакан"
+                    />
+                  </div>
+                  <!--Галочка-->
+                  <div class="water_check water_check_1">
+                    <svg
+                      class="check-icon"
+                      width="90"
+                      height="90"
+                      viewBox="8 10 50 50"
+                      fill="none"
+                      stroke="#7aff05"
+                      stroke-width="5"
+                      stroke-dasharray="100"
+                    >
+                      <path
+                        class="check-path"
+                        id="check"
+                        d="M 12,22 L 22,31 L 36,13"
+                      ></path>
+                    </svg>
+                  </div>
                 </div>
-                
-                <div class="plan">
-                    <div class="date">  
-                        <div class="today">
-                            <span>Today:</span>
-                            <div id="currentDate"></div> 
-                        </div>
-                    </div>
-                    <div class="table">
-                        <div class="cups">  
-                            <div class="cups_item" data-rate="1">
-                                <!--Картинка-->
-                                <div class="water_glass">
-                                    <img src="jpg/glass-of-water.png" alt="Тут должен быть стакан">
-                                </div>
-                                <!--Галочка-->
-                                <div class="water_check water_check_1">
-                                    <svg class="check-icon" width="90" height="90" viewBox="8 10 50 50" fill="none" stroke="#7aff05" 
-                                    stroke-width="5" stroke-dasharray="100">
-                                    <path class="check-path" id="check" d="M 12,22 L 22,31 L 36,13"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="cups_item" data-rate="2">
-                                <!--Картинка-->
-                             <div class="water_glass">
-                                    <img src="jpg/glass-of-water.png" alt="Тут должен быть стакан">
-                                </div>
-                                <!--Галочка-->
-                                <div class="water_check water_check_2">
-                                    <svg class="check-icon" width="90" height="90" viewBox="8 10 50 50" fill="none" stroke="#7aff05" 
-                                    stroke-width="5" stroke-dasharray="100">
-                                    <path class="check-path" id="check" d="M 12,22 L 22,31 L 36,13"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="cups_item" data-rate="3">
-                                <!--Картинка-->
-                                <div class="water_glass">
-                                    <img src="jpg/glass-of-water.png" alt="Тут должен быть стакан">
-                                </div>
-                                <!--Галочка-->
-                                <div class="water_check water_check_3">
-                                    <svg class="check-icon" width="90" height="90" viewBox="8 10 50 50" fill="none" stroke="#7aff05" 
-                                    stroke-width="5" stroke-dasharray="100">
-                                    <path class="check-path" id="check" d="M 12,22 L 22,31 L 36,13"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="cups_item"  data-rate="4">
-                                <!--Картинка-->
-                                <div class="water_glass">
-                                    <img src="jpg/glass-of-water.png" alt="Тут должен быть стакан">
-                                </div>
-                                <!--Галочка-->
-                                <div class="water_check water_check_4">
-                                    <svg class="check-icon" width="90" height="90" viewBox="8 10 50 50" fill="none" stroke="#7aff05" 
-                                    stroke-width="5" stroke-dasharray="100">
-                                    <path class="check-path" id="check" d="M 12,22 L 22,31 L 36,13"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="cups_item"  data-rate="5">
-                                <!--Картинка-->
-                                <div class="water_glass">
-                                    <img src="jpg/glass-of-water.png" alt="Тут должен быть стакан">
-                                </div>
-                                <!--Галочка-->
-                                <div class="water_check water_check_5">
-                                    <svg class="check-icon" width="90" height="90" viewBox="8 10 50 50" fill="none" stroke="#7aff05" 
-                                    stroke-width="5" stroke-dasharray="100">
-                                    <path class="check-path" id="check" d="M 12,22 L 22,31 L 36,13"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="cups_item"  data-rate="6">
-                                <!--Картинка-->
-                                <div class="water_glass">
-                                    <img src="jpg/glass-of-water.png" alt="Тут должен быть стакан">
-                                </div>
-                                <!--Галочка-->
-                                <div class="water_check water_check_6">
-                                    <svg class="check-icon" width="90" height="90" viewBox="8 10 50 50" fill="none" stroke="#7aff05" 
-                                    stroke-width="5" stroke-dasharray="100">
-                                    <path class="check-path" id="check" d="M 12,22 L 22,31 L 36,13"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="cups_item"  data-rate="7">
-                                <!--Картинка-->
-                                <div class="water_glass">
-                                    <img src="jpg/glass-of-water.png" alt="Тут должен быть стакан">
-                                </div>
-                                <!--Галочка-->
-                                <div class="water_check water_check_7">
-                                    <svg class="check-icon" width="90" height="90" viewBox="8 10 50 50" fill="none" stroke="#7aff05" 
-                                    stroke-width="5" stroke-dasharray="100">
-                                    <path class="check-path" id="check" d="M 12,22 L 22,31 L 36,13"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="cups_item"  data-rate="8">
-                                <!--Картинка-->
-                                <div class="water_glass">
-                                    <img src="jpg/glass-of-water.png" alt="Тут должен быть стакан">
-                                </div>
-                                <!--Галочка-->
-                                <div class="water_check water_check_8">
-                                    <svg class="check-icon" width="90" height="90" viewBox="8 10 50 50" fill="none" stroke="#7aff05" 
-                                    stroke-width="5" stroke-dasharray="100">
-                                    <path class="check-path" id="check" d="M 12,22 L 22,31 L 36,13"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <!--<div class="cups_item"  data-rate="9">
+                <div class="cups_item" data-rate="2">
+                  <!--Картинка-->
+                  <div class="water_glass">
+                    <img
+                      src="jpg/glass-of-water.png"
+                      alt="Тут должен быть стакан"
+                    />
+                  </div>
+                  <!--Галочка-->
+                  <div class="water_check water_check_2">
+                    <svg
+                      class="check-icon"
+                      width="90"
+                      height="90"
+                      viewBox="8 10 50 50"
+                      fill="none"
+                      stroke="#7aff05"
+                      stroke-width="5"
+                      stroke-dasharray="100"
+                    >
+                      <path
+                        class="check-path"
+                        id="check"
+                        d="M 12,22 L 22,31 L 36,13"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="cups_item" data-rate="3">
+                  <!--Картинка-->
+                  <div class="water_glass">
+                    <img
+                      src="jpg/glass-of-water.png"
+                      alt="Тут должен быть стакан"
+                    />
+                  </div>
+                  <!--Галочка-->
+                  <div class="water_check water_check_3">
+                    <svg
+                      class="check-icon"
+                      width="90"
+                      height="90"
+                      viewBox="8 10 50 50"
+                      fill="none"
+                      stroke="#7aff05"
+                      stroke-width="5"
+                      stroke-dasharray="100"
+                    >
+                      <path
+                        class="check-path"
+                        id="check"
+                        d="M 12,22 L 22,31 L 36,13"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="cups_item" data-rate="4">
+                  <!--Картинка-->
+                  <div class="water_glass">
+                    <img
+                      src="jpg/glass-of-water.png"
+                      alt="Тут должен быть стакан"
+                    />
+                  </div>
+                  <!--Галочка-->
+                  <div class="water_check water_check_4">
+                    <svg
+                      class="check-icon"
+                      width="90"
+                      height="90"
+                      viewBox="8 10 50 50"
+                      fill="none"
+                      stroke="#7aff05"
+                      stroke-width="5"
+                      stroke-dasharray="100"
+                    >
+                      <path
+                        class="check-path"
+                        id="check"
+                        d="M 12,22 L 22,31 L 36,13"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="cups_item" data-rate="5">
+                  <!--Картинка-->
+                  <div class="water_glass">
+                    <img
+                      src="jpg/glass-of-water.png"
+                      alt="Тут должен быть стакан"
+                    />
+                  </div>
+                  <!--Галочка-->
+                  <div class="water_check water_check_5">
+                    <svg
+                      class="check-icon"
+                      width="90"
+                      height="90"
+                      viewBox="8 10 50 50"
+                      fill="none"
+                      stroke="#7aff05"
+                      stroke-width="5"
+                      stroke-dasharray="100"
+                    >
+                      <path
+                        class="check-path"
+                        id="check"
+                        d="M 12,22 L 22,31 L 36,13"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="cups_item" data-rate="6">
+                  <!--Картинка-->
+                  <div class="water_glass">
+                    <img
+                      src="jpg/glass-of-water.png"
+                      alt="Тут должен быть стакан"
+                    />
+                  </div>
+                  <!--Галочка-->
+                  <div class="water_check water_check_6">
+                    <svg
+                      class="check-icon"
+                      width="90"
+                      height="90"
+                      viewBox="8 10 50 50"
+                      fill="none"
+                      stroke="#7aff05"
+                      stroke-width="5"
+                      stroke-dasharray="100"
+                    >
+                      <path
+                        class="check-path"
+                        id="check"
+                        d="M 12,22 L 22,31 L 36,13"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="cups_item" data-rate="7">
+                  <!--Картинка-->
+                  <div class="water_glass">
+                    <img
+                      src="jpg/glass-of-water.png"
+                      alt="Тут должен быть стакан"
+                    />
+                  </div>
+                  <!--Галочка-->
+                  <div class="water_check water_check_7">
+                    <svg
+                      class="check-icon"
+                      width="90"
+                      height="90"
+                      viewBox="8 10 50 50"
+                      fill="none"
+                      stroke="#7aff05"
+                      stroke-width="5"
+                      stroke-dasharray="100"
+                    >
+                      <path
+                        class="check-path"
+                        id="check"
+                        d="M 12,22 L 22,31 L 36,13"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="cups_item" data-rate="8">
+                  <!--Картинка-->
+                  <div class="water_glass">
+                    <img
+                      src="jpg/glass-of-water.png"
+                      alt="Тут должен быть стакан"
+                    />
+                  </div>
+                  <!--Галочка-->
+                  <div class="water_check water_check_8">
+                    <svg
+                      class="check-icon"
+                      width="90"
+                      height="90"
+                      viewBox="8 10 50 50"
+                      fill="none"
+                      stroke="#7aff05"
+                      stroke-width="5"
+                      stroke-dasharray="100"
+                    >
+                      <path
+                        class="check-path"
+                        id="check"
+                        d="M 12,22 L 22,31 L 36,13"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <!--<div class="cups_item"  data-rate="9">
                                 
                                 <div class="water_glass">
                                     <img src="jpg/glass-of-water.png" alt="Тут должен быть стакан">
@@ -182,20 +316,20 @@
                                     </svg>
                                 </div>
                             </div>-->
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-        </main>
-        <!----------------footer------------------------------------>
-        <footer>
-            <div class="social">
-                <div class="instagram"></div>
-                <div class="telegram"></div>
-                <div class="mail"></div>
-            </div>
-        </footer>
+          </div>
+        </div>
+      </main>
+      <!----------------footer------------------------------------>
+      <footer>
+        <div class="social">
+          <div class="instagram"></div>
+          <div class="telegram"></div>
+          <div class="mail"></div>
+        </div>
+      </footer>
     </div>
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
