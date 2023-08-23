@@ -81,4 +81,3 @@ const updateCurrentDate = () => {
 };
 
 setInterval(updateCurrentDate, 1000);
-updateCurrentDate();
