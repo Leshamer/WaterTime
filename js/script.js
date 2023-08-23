@@ -69,7 +69,7 @@ cups.onclick = function (e) {
   }
 };
 
-function updateCurrentDate() {
+const updateCurrentDate = () => {
   const currentDateElement = document.getElementById("currentDate");
 
   const currentDate = new Date().toLocaleDateString("en-GB");
@@ -78,7 +78,7 @@ function updateCurrentDate() {
   const formattedDate = `Today: ${currentDate} ${currentTime}`;
 
   currentDateElement.textContent = formattedDate;
-}
+};
 
 setInterval(updateCurrentDate, 1000);
 updateCurrentDate();
