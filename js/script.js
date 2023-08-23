@@ -71,11 +71,11 @@ cups.onclick = function (e) {
 
 function updateCurrentDate() {
   const currentDateElement = document.getElementById("currentDate");
-  const now = new Date();
-  // not required to call each second
-  const formattedDate = `${now.getDate() < 10 ? "0" : ""}${now.getDate()}.${
-    now.getMonth() + 1 < 10 ? "0" : ""
-  }${now.getMonth() + 1}.${now.getFullYear()}`;
+
+  const currentDate = new Date().toLocaleDateString("en-GB");
+  const currentTime = new Date().toLocaleTimeString();
+
+  const formattedDate = `Today: ${currentDate} ${currentTime}`;
 
   currentDateElement.textContent = formattedDate;
 }
